@@ -1,3 +1,24 @@
-.cart {
-	@apply flex items-center bg-light-green;
+.wrapper-cart {
+	@apply relative;
+	.heading {
+		@apply flex items-center;
+
+		.badge {
+			@apply mr-4 flex h-5 w-5 items-center justify-center rounded-full bg-red p-1 text-white;
+		}
+
+		.text {
+			@apply font-bold uppercase tracking-widest;
+		}
+	}
+
+	.cart {
+		@apply p-5;
+		.item {
+		}
+		.name {
+		}
+		.price {
+		}
+	}
 }
