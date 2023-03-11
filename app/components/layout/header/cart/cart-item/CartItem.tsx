@@ -1,8 +1,8 @@
+import styles from './CartItem.module.scss'
+import CartActions from './cart-actions/CartActions'
 import { ICartItem } from '@/types/cart-item.interface'
 import Image from 'next/image'
 import { FC } from 'react'
-
-import styles from '@/layout/header/cart/cart-item/CartItem'
 
 const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 	return (
@@ -21,6 +21,7 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 						currency: 'USD'
 					}).format(item.product.price)}
 				</div>
+				<CartActions />
 			</div>
 		</div>
 	)

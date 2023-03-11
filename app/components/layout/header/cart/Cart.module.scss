@@ -13,12 +13,15 @@
 	}
 
 	.cart {
-		@apply p-5;
-		.item {
-		}
-		.name {
-		}
-		.price {
-		}
+	}
+}
+
+.footer {
+	> div:first-child {
+		@apply text-sm text-beige;
+	}
+
+	> div:last-child {
+		@apply text-xl font-semibold;
 	}
 }
