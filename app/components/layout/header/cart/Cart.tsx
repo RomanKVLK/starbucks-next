@@ -1,6 +1,5 @@
 import styles from './Cart.module.scss'
 import CartItem from './cart-item/CartItem'
-import { cart } from '@/data/cart.data'
 import {
 	Button,
 	Drawer,
@@ -13,9 +12,16 @@ import {
 } from '@chakra-ui/react'
 import { FC, useRef, useState } from 'react'
 
+import { useTypedSelector } from '@/components/hooks/useTypedSelector'
+
+import { formatToCurrency } from '@/utils/format-to-currency'
+
 const Cart: FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const btnRef = useRef<HTMLButtonElement>(null)
+	const cart = useTypedSelector(state => state.cart.items)
+	const total = cart.reduce((acc, item) => acc + item.product.price, 0)
+
 	return (
 		<div className={styles['wrapper-cart']}>
 			<button
@@ -25,7 +31,7 @@ const Cart: FC = () => {
 				className={styles.heading}
 				ref={btnRef}
 			>
-				<div className={styles.badge}>1</div>
+				<div className={styles.badge}>{cart.length}</div>
 				<span className={styles.text}>My backet</span>
 			</button>
 			<Drawer
@@ -37,7 +43,7 @@ const Cart: FC = () => {
 				<DrawerOverlay />
 				<DrawerContent>
 					<DrawerCloseButton />
-					<DrawerHeader>My cart</DrawerHeader>
+					<DrawerHeader>My basket</DrawerHeader>
 
 					<DrawerBody>
 						<div className={styles.cart}>
@@ -47,10 +53,14 @@ const Cart: FC = () => {
 						</div>
 					</DrawerBody>
 
-					<DrawerFooter justifyContent={'space-between'}>
+					<DrawerFooter
+						justifyContent={'space-between'}
+						borderTopColor={'#F7F4F0'}
+						borderTopWidth={1}
+					>
 						<div className={styles.footer}>
 							<div>Total:</div>
-							<div>100$</div>
+							<div>{formatToCurrency(total)}</div>
 						</div>
 						<Button colorScheme='green'>Checkout</Button>
 					</DrawerFooter>

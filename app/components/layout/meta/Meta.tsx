@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { FC, PropsWithChildren } from 'react'
 
-import { onlyText } from '@/components/utils/clear-text'
+import { onlyText } from '@/utils/clear-text'
 
 const Meta: FC<PropsWithChildren<ISeo>> = ({
 	title,
