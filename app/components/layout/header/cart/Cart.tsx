@@ -2,6 +2,7 @@ import styles from './Cart.module.scss'
 import CartItem from './cart-item/CartItem'
 import {
 	Button,
+	Divider,
 	Drawer,
 	DrawerBody,
 	DrawerCloseButton,
@@ -12,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { FC, useRef, useState } from 'react'
 
+import { useCart } from '@/components/hooks/useCart'
 import { useTypedSelector } from '@/components/hooks/useTypedSelector'
 
 import { formatToCurrency } from '@/utils/format-to-currency'
@@ -19,8 +21,7 @@ import { formatToCurrency } from '@/utils/format-to-currency'
 const Cart: FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const btnRef = useRef<HTMLButtonElement>(null)
-	const cart = useTypedSelector(state => state.cart.items)
-	const total = cart.reduce((acc, item) => acc + item.product.price, 0)
+	const { cart, total } = useCart()
 
 	return (
 		<div className={styles['wrapper-cart']}>
@@ -47,9 +48,11 @@ const Cart: FC = () => {
 
 					<DrawerBody>
 						<div className={styles.cart}>
-							{cart.map(item => (
-								<CartItem item={item} key={item.id} />
-							))}
+							{cart.length ? (
+								cart.map(item => <CartItem item={item} key={item.id} />)
+							) : (
+								<div>Basket is empty</div>
+							)}
 						</div>
 					</DrawerBody>
 
