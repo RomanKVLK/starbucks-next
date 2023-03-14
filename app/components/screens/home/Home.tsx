@@ -1,12 +1,20 @@
+import { products } from '@/data/product.data'
 import { FC } from 'react'
 
 import Layout from '@/layout/Layout'
 
+import Catalog from '@/ui/catalog/Catalog'
+
 const Home: FC = () => {
 	return (
-		<Layout title='Home' description={''} image={''} type={''}>
+		<Layout
+			title='Home'
+			description='More than just great coffee. Explore the menu, sigm up for Starbucks Rewards, menage your gift card and more'
+			image={''}
+			type={''}
+		>
 			<div>
-				<h1>Starbucks</h1>
+				<Catalog products={products} />
 			</div>
 		</Layout>
 	)

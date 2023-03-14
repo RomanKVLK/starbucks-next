@@ -1,0 +1,62 @@
+@import 'app/assets/styles/variables';
+.carousel {
+	@apply grid grid-cols-4 gap-8;
+}
+
+.item {
+	@apply relative mt-20 rounded-3xl bg-light-gray p-5 pt-0;
+	.image {
+		@apply -mt-20;
+	}
+
+	.heading {
+		@apply text-xl font-bold leading-7 text-beige;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.description {
+		@apply mt-5 text-sm opacity-90;
+	}
+
+	> div {
+		@apply relative;
+	}
+
+	.variations {
+		@apply mt-6 grid grid-cols-4 gap-2;
+
+		> button {
+			@apply rounded border border-solid border-white bg-transparent px-0.5 py-1 text-[0.6rem] font-semibold uppercase text-white transition-colors;
+			&.active {
+				@apply bg-white text-dark-green;
+			}
+		}
+	}
+
+	&.active {
+		@apply bg-green p-7 pt-0 shadow-2xl shadow-green;
+		transform: scale(1.12);
+		background-image: url('../../../../../public/images/bg-item.png');
+		background-position: center -120px;
+
+		&::before {
+			@apply absolute top-0 left-0 h-full w-full rounded-3xl;
+			content: '';
+			background-image: linear-gradient(to top, $green 70%, rgba(0, 0, 0, 0));
+		}
+
+		.heading {
+			@apply text-3xl leading-9 text-white;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+	}
+}
+
+.button {
+	@apply flex justify-center;
+}

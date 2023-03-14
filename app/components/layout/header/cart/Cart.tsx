@@ -14,7 +14,6 @@ import {
 import { FC, useRef, useState } from 'react'
 
 import { useCart } from '@/components/hooks/useCart'
-import { useTypedSelector } from '@/components/hooks/useTypedSelector'
 
 import { formatToCurrency } from '@/utils/format-to-currency'
 
@@ -33,7 +32,7 @@ const Cart: FC = () => {
 				ref={btnRef}
 			>
 				<div className={styles.badge}>{cart.length}</div>
-				<span className={styles.text}>My backet</span>
+				<span className={styles.text}>My basket</span>
 			</button>
 			<Drawer
 				isOpen={isOpen}

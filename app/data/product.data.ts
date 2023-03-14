@@ -42,7 +42,7 @@ export const products: IProduct[] = [
 		description:
 			'We blend mocha sauce and Frappuccino® chips with coffee, milk and ice, then top it off with whipped cream and a mocha drizzle to bring you endless java joy.',
 		name: 'Java Chip Frappuccino Blended Beverage',
-		images: ['//images/products/Java-Chip-Frappuccino-Blended-Beverage.png'],
+		images: ['/images/products/Java-Chip-Frappuccino-Blended-Beverage.png'],
 		price: 10,
 		reviews: []
 	},
