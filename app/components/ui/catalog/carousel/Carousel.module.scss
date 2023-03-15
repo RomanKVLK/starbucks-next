@@ -4,10 +4,7 @@
 }
 
 .item {
-	@apply relative mt-20 rounded-3xl bg-light-gray p-5 pt-0;
-	.image {
-		@apply -mt-20;
-	}
+	@apply relative mt-20 cursor-pointer rounded-3xl bg-light-gray p-5 pt-0;
 
 	.heading {
 		@apply text-xl font-bold leading-7 text-beige;

@@ -1,7 +1,7 @@
 import styles from '../Carousel.module.scss'
 import CarouselButton from './CarouselButton'
-import CarouselNavigation from './CarouselNavigation'
 import CarouselVariations from './CarouselVariations'
+import CarouselNavigation from './carousel-navigation/CarouselNavigation'
 import { ICarouselItem } from '@/types/carousel-item.interface'
 import cn from 'clsx'
 import { FC, useState } from 'react'
@@ -18,11 +18,13 @@ const CarouselItem: FC<ICarouselItem> = ({
 	const [selectedSize, setSelectedSize] = useState<TypeSize>('SHORT')
 
 	return (
-		<button
+		<div
 			className={cn(styles.item, {
 				[styles.active]: isActive
 			})}
 			onClick={selectItem}
+			aria-label='Select Item'
+			role='button'
 		>
 			<div>
 				<CarouselNavigation
@@ -46,7 +48,7 @@ const CarouselItem: FC<ICarouselItem> = ({
 					<div className={styles.description}>{product.description}</div>
 				)}
 			</div>
-		</button>
+		</div>
 	)
 }
 
