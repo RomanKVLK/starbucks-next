@@ -1,29 +1,35 @@
 import styles from '../Carousel.module.scss'
 import CarouselButton from './CarouselButton'
+import CarouselNavigation from './CarouselNavigation'
 import CarouselVariations from './CarouselVariations'
-import { IProduct } from '@/types/product.interface'
+import { ICarouselItem } from '@/types/carousel-item.interface'
 import cn from 'clsx'
-import Image from 'next/image'
 import { FC, useState } from 'react'
 
 import { TypeSize } from '@/store/types'
 
-const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
+const CarouselItem: FC<ICarouselItem> = ({
+	product,
+	isActive,
+	selectItem,
+	nextHandler,
+	prevHandler
+}) => {
 	const [selectedSize, setSelectedSize] = useState<TypeSize>('SHORT')
-	const isActive = product.id === 2
+
 	return (
-		<div
+		<button
 			className={cn(styles.item, {
 				[styles.active]: isActive
 			})}
+			onClick={selectItem}
 		>
 			<div>
-				<Image
-					src={product.images[0]}
-					alt={product.name}
-					width={400}
-					height={400}
-					className={styles.image}
+				<CarouselNavigation
+					isActive={isActive}
+					nextHandler={nextHandler}
+					prevHandler={prevHandler}
+					product={product}
 				/>
 				<div className={styles.heading}>{product.name}</div>
 				{isActive ? (
@@ -40,7 +46,7 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 					<div className={styles.description}>{product.description}</div>
 				)}
 			</div>
-		</div>
+		</button>
 	)
 }
 
