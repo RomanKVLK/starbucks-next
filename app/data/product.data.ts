@@ -13,7 +13,7 @@ export const products: IProduct[] = [
 	{
 		id: 2,
 		description:
-			'Frappuccino® Roast coffee, mocha sauce and Frappuccino® chips blended with milk and ice, layered on top of whipped cream and chocolate cookie crumble and topped with vanilla whipped cream, mocha drizzle and even more chocolate cookie crumble. Each sip is as good as the last . . . all the way to the end.',
+			'Frappuccino® Roast coffee, mocha sauce and Frappuccino® chips blended with milk and ice, layered on top of whipped cream and chocolate cookie crumble and topped with vanilla whipped cream, mocha drizzle and even more chocolate cookie crumble.',
 		name: 'Mocha Cookie Crumble Frappuccino',
 		images: ['/images/products/Mocha-Cookie-Crumble-Frappuccino.png'],
 		price: 8,
@@ -50,7 +50,7 @@ export const products: IProduct[] = [
 		id: 6,
 		description:
 			'Mocha sauce, Frappuccino® Roast coffee, milk and ice all come together for a mocha flavor thatll leave you wanting more. To change things up, try it affogato-style with a hot espresso shot poured right over the top.',
-		name: 'Java Chip Frappuccino Blended Beverage',
+		name: 'Mocha Frappuccino Blended Beverage',
 		images: ['/images/products/Mocha-Frappuccino-Blended-Beverage.png'],
 		price: 9,
 		reviews: []

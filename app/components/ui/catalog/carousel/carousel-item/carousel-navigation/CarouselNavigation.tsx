@@ -14,7 +14,7 @@ const CarouselNavigation: FC<ICarouselNavigation> = ({
 		<div className={styles.navigation}>
 			{isActive && (
 				<button onClick={prevHandler} className={styles.arrow}>
-					<ChevronLeftIcon fontSize={13} />
+					<ChevronLeftIcon fontSize={40} />
 				</button>
 			)}
 			<Image
@@ -27,7 +27,7 @@ const CarouselNavigation: FC<ICarouselNavigation> = ({
 			/>
 			{isActive && (
 				<button onClick={nextHandler} className={styles.arrow}>
-					<ChevronRightIcon fontSize={13} />
+					<ChevronRightIcon fontSize={40} />
 				</button>
 			)}
 		</div>
