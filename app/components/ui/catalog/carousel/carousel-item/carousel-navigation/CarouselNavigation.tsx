@@ -8,7 +8,11 @@ import { FC } from 'react'
 
 import { useActions } from '@/components/hooks/useActions'
 
-const CarouselNavigation: FC<ICarouselNavigation> = ({ product, isActive }) => {
+const CarouselNavigation: FC<ICarouselNavigation> = ({
+	product,
+	isActive,
+	onSelectSlide
+}) => {
 	const { prevSlide, nextSlide } = useActions()
 	return (
 		<div className={styles.navigation}>
@@ -32,6 +36,7 @@ const CarouselNavigation: FC<ICarouselNavigation> = ({ product, isActive }) => {
 				height={400}
 				className={styles.image}
 				draggable={false}
+				onClick={onSelectSlide}
 			/>
 		</div>
 	)

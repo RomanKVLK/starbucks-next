@@ -5,6 +5,7 @@ import CarouselNavigation from './carousel-navigation/CarouselNavigation'
 import { useCarousel } from './useCarousel'
 import { ICarouselItem } from '@/types/carousel-item.interface'
 import cn from 'clsx'
+import { motion } from 'framer-motion'
 import { FC, useState } from 'react'
 
 import { useActions } from '@/components/hooks/useActions'
@@ -20,17 +21,25 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 	const isActive = index === selectedItemIndex
 
 	return (
-		<div
+		<motion.div
 			className={cn(styles.item, {
 				[styles.active]: index === selectedItemIndex
 			})}
-			// onClick={() => selectSlide(index)}
 			aria-label='Select Item'
 			role='button'
+			initial={{ scale: 1 }}
+			animate={isActive ? { scale: 1.12 } : {}}
+			transition={{ duration: 0.4, type: 'spring' }}
 		>
 			<div>
-				<CarouselNavigation product={product} isActive={isActive} />
-				<div className={styles.heading}>{product.name}</div>
+				<CarouselNavigation
+					onSelectSlide={() => selectSlide(index)}
+					product={product}
+					isActive={isActive}
+				/>
+				<button onClick={() => selectSlide(index)} className={styles.heading}>
+					{product.name}
+				</button>
 				{isActive ? (
 					<>
 						<CarouselVariations
@@ -45,7 +54,7 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 					<div className={styles.description}>{product.description}</div>
 				)}
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

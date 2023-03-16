@@ -7,4 +7,5 @@ export interface ICarouselItem {
 
 export interface ICarouselNavigation extends Omit<ICarouselItem, 'index'> {
 	isActive: boolean
+	onSelectSlide: () => void
 }
