@@ -1,7 +1,7 @@
 import { IProduct } from './product.interface'
 import { Dispatch, SetStateAction } from 'react'
 
-import { TypeSize } from '@/store/types'
+import { TypeSize } from '@/store/cart/cart.types'
 
 export interface ICarouselButton {
 	product: IProduct

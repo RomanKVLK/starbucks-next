@@ -1,6 +1,6 @@
 import { IProduct } from '@/types/product.interface'
 
-import { TypeSize } from '@/store/types'
+import { TypeSize } from '@/store/cart/cart.types'
 
 export interface ICartItem {
 	id: number

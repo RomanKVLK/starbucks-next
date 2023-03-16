@@ -1,4 +1,5 @@
-import { cartSlice } from './slice'
+import { carouselSlice } from './carousel/carousel.slice'
+import { cartSlice } from './cart/cart.slice'
 import {
 	combineReducers,
 	configureStore,
@@ -23,7 +24,8 @@ const persistConfig = {
 }
 
 const rootReduser = combineReducers({
-	cart: cartSlice.reducer
+	cart: cartSlice.reducer,
+	carousel: carouselSlice.reducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReduser)

@@ -3,7 +3,7 @@ import { ICarouselVariations } from '@/types/carousel-variations.interface'
 import cn from 'clsx'
 import { FC } from 'react'
 
-import { TypeSize } from '@/store/types'
+import { TypeSize } from '@/store/cart/cart.types'
 
 const SIZES: TypeSize[] = ['SHORT', 'TALL', 'GRANDE', 'VENTI']
 

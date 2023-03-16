@@ -1,21 +1,29 @@
+import { useCarousel } from '../useCarousel'
 import styles from './CarouselNavigation.module.scss'
+import { products } from '@/data/product.data'
 import { ICarouselNavigation } from '@/types/carousel-item.interface'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
 import { FC } from 'react'
 
-const CarouselNavigation: FC<ICarouselNavigation> = ({
-	isActive,
-	nextHandler,
-	prevHandler,
-	product
-}) => {
+import { useActions } from '@/components/hooks/useActions'
+
+const CarouselNavigation: FC<ICarouselNavigation> = ({ product, isActive }) => {
+	const { prevSlide, nextSlide } = useActions()
 	return (
 		<div className={styles.navigation}>
 			{isActive && (
-				<button onClick={prevHandler} className={styles.arrow}>
-					<ChevronLeftIcon fontSize={40} />
-				</button>
+				<div className={styles.arrows}>
+					<button onClick={() => prevSlide()} className={styles.arrow}>
+						<ChevronLeftIcon fontSize={40} />
+					</button>
+					<button
+						onClick={() => nextSlide({ carouselLenght: products.length })}
+						className={styles.arrow}
+					>
+						<ChevronRightIcon fontSize={40} />
+					</button>
+				</div>
 			)}
 			<Image
 				src={product.images[0]}
@@ -25,11 +33,6 @@ const CarouselNavigation: FC<ICarouselNavigation> = ({
 				className={styles.image}
 				draggable={false}
 			/>
-			{isActive && (
-				<button onClick={nextHandler} className={styles.arrow}>
-					<ChevronRightIcon fontSize={40} />
-				</button>
-			)}
 		</div>
 	)
 }
