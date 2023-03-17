@@ -14,7 +14,7 @@ export const products: IProduct[] = [
 		id: 2,
 		description:
 			'Frappuccino® Roast coffee, mocha sauce and Frappuccino® chips blended with milk and ice, layered on top of whipped cream and chocolate cookie crumble and topped with vanilla whipped cream, mocha drizzle and even more chocolate cookie crumble.',
-		name: 'Mocha Cookie Crumble Frappuccino',
+		name: 'Mocha-Coffee Cookie Crumble Frappuccino',
 		images: ['/images/products/Mocha-Cookie-Crumble-Frappuccino.png'],
 		price: 8,
 		reviews: []

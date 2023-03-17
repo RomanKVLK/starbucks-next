@@ -4,6 +4,7 @@ import { FC } from 'react'
 import Layout from '@/layout/Layout'
 
 import Catalog from '@/ui/catalog/Catalog'
+import Heading from '@/ui/heading/Heading'
 
 const Home: FC = () => {
 	return (
@@ -13,9 +14,8 @@ const Home: FC = () => {
 			image={''}
 			type={''}
 		>
-			<div>
-				<Catalog products={products} />
-			</div>
+			<Heading>The happiest hour of the year</Heading>
+			<Catalog products={products} />
 		</Layout>
 	)
 }

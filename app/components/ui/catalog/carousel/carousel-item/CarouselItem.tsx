@@ -29,7 +29,7 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 			role='button'
 			initial={{ scale: 1 }}
 			animate={isActive ? { scale: 1.12 } : {}}
-			transition={{ duration: 0.4, type: 'spring' }}
+			transition={{ duration: 1, type: 'spring' }}
 		>
 			<div>
 				<CarouselNavigation
