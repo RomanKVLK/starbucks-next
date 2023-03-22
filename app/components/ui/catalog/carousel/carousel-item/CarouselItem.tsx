@@ -6,6 +6,7 @@ import { useCarousel } from './useCarousel'
 import { ICarouselItem } from '@/types/carousel-item.interface'
 import cn from 'clsx'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { FC, useState } from 'react'
 
 import { useActions } from '@/components/hooks/useActions'
@@ -48,6 +49,7 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 						/>
 						<div className={styles.button}>
 							<CarouselButton selectedSize={selectedSize} product={product} />
+							<Link href={`/product/${product.slug}`}></Link>
 						</div>
 					</>
 				) : (

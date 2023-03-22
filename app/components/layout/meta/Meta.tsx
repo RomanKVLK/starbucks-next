@@ -1,4 +1,5 @@
 // import { siteName, titleMerge } from './meta.config'
+import { siteName, titleMerge } from './meta.config'
 import { ISeo } from './meta.interface'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -19,7 +20,7 @@ const Meta: FC<PropsWithChildren<ISeo>> = ({
 	return (
 		<>
 			<Head>
-				<title itemProp='headline'>{title}</title>
+				<title itemProp='headline'>{titleMerge(title)}</title>
 				{description ? (
 					<>
 						<meta
@@ -33,7 +34,7 @@ const Meta: FC<PropsWithChildren<ISeo>> = ({
 						<meta property='og:title' content={title} />
 						<meta property='og:url' content={currentUrl} />
 						<meta property='og:image' content={image} />
-						<meta property='og:site_name' content={title} />
+						<meta property='og:site_name' content={siteName} />
 						<meta
 							property='og:description'
 							content={onlyText(description, 197)}
