@@ -53,6 +53,10 @@
 			-webkit-box-orient: vertical;
 		}
 	}
+
+	.link {
+		@apply mt-3 block  text-center text-xs text-white;
+	}
 }
 
 .button {

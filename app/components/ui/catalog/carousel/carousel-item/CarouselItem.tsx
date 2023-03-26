@@ -49,8 +49,10 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 						/>
 						<div className={styles.button}>
 							<CarouselButton selectedSize={selectedSize} product={product} />
-							<Link href={`/product/${product.slug}`}></Link>
 						</div>
+						<Link href={`/product/${product.slug}`} className={styles.link}>
+							More information
+						</Link>
 					</>
 				) : (
 					<div className={styles.description}>{product.description}</div>

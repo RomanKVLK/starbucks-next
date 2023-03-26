@@ -11,8 +11,6 @@ const Home: FC = () => {
 		<Layout
 			title='Home'
 			description='More than just great coffee. Explore the menu, sigm up for Starbucks Rewards, menage your gift card and more'
-			image={''}
-			type={''}
 		>
 			<Heading>The happiest hour of the year</Heading>
 			<Catalog products={products} />

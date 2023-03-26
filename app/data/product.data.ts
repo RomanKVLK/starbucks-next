@@ -25,7 +25,7 @@ export const products: IProduct[] = [
 		id: 3,
 		description:
 			'Buttery caramel syrup blended with coffee, milk and ice, then topped with a layer of dark caramel sauce, whipped cream, caramel drizzle and a crunchy caramel-sugar topping—oh-so-beautifully delicious.',
-		name: 'Caramel Ribbon Crunch Frappuccino',
+		name: 'Caramel Ribbon Cookie Crunch Frappuccino',
 		slug: 'caramel-ribbon-crunch-frappuccino',
 		images: ['/images/products/Caramel-Ribbon-Crunch-Frappuccino.png'],
 		price: 9,
