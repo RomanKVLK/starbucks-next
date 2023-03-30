@@ -1,6 +1,8 @@
 import { FC } from 'react'
 
-const ProductVariations: FC = () => {
+import { IProductDetails } from '@/types/product-details.interface'
+
+const ProductVariations: FC<IProductDetails> = ({ product }) => {
 	return <div>ProductVariations</div>
 }
 

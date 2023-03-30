@@ -1,6 +1,8 @@
-import { IProductDetails } from '@/types/product-details.interface'
+import styles from './ProductCard.module.scss'
 import Image from 'next/image'
 import { FC } from 'react'
+
+import { IProductDetails } from '@/types/product-details.interface'
 
 const ProductInfo: FC<IProductDetails> = ({ product }) => {
 	return (
