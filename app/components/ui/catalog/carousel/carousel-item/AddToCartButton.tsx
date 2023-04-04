@@ -1,4 +1,3 @@
-import { ICarouselButton } from '@/types/carousel-variations.interface'
 import { Button } from '@chakra-ui/react'
 import { FC } from 'react'
 
@@ -6,7 +5,9 @@ import { COLORS } from '@/components/config/color.config'
 import { useActions } from '@/components/hooks/useActions'
 import { useCart } from '@/components/hooks/useCart'
 
-const CarouselButton: FC<ICarouselButton> = ({ product, selectedSize }) => {
+import { IAddToCartButton } from '@/types/carousel-variations.interface'
+
+const AddToCartButton: FC<IAddToCartButton> = ({ product, selectedSize }) => {
 	const { addToCart, removeFromCart } = useActions()
 	const { cart } = useCart()
 	const currentElement = cart.find(
@@ -35,4 +36,4 @@ const CarouselButton: FC<ICarouselButton> = ({ product, selectedSize }) => {
 	)
 }
 
-export default CarouselButton
+export default AddToCartButton

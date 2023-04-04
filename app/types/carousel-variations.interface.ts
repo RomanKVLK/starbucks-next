@@ -3,12 +3,12 @@ import { Dispatch, SetStateAction } from 'react'
 
 import { TypeSize } from '@/store/cart/cart.types'
 
-export interface ICarouselButton {
+export interface IAddToCartButton {
 	product: IProduct
 	selectedSize: TypeSize
 }
 
-export interface ICarouselVariations {
+export interface ISizeVariations {
 	selectedSize: TypeSize
 	setSelectedSize: Dispatch<SetStateAction<TypeSize>>
 }

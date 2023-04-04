@@ -1,13 +1,14 @@
 import styles from '../Carousel.module.scss'
-import { ICarouselVariations } from '@/types/carousel-variations.interface'
 import cn from 'clsx'
 import { FC } from 'react'
 
 import { TypeSize } from '@/store/cart/cart.types'
 
+import { ISizeVariations } from '@/types/carousel-variations.interface'
+
 const SIZES: TypeSize[] = ['SHORT', 'TALL', 'GRANDE', 'VENTI']
 
-const CarouselVariations: FC<ICarouselVariations> = ({
+const SizeVariations: FC<ISizeVariations> = ({
 	selectedSize,
 	setSelectedSize
 }) => {
@@ -26,4 +27,4 @@ const CarouselVariations: FC<ICarouselVariations> = ({
 	)
 }
 
-export default CarouselVariations
+export default SizeVariations

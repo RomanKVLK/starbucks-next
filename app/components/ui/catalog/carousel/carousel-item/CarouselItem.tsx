@@ -1,9 +1,8 @@
 import styles from '../Carousel.module.scss'
-import CarouselButton from './CarouselButton'
-import CarouselVariations from './CarouselVariations'
+import CarouselButton from './AddToCartButton'
+import SizeVariations from './SizeVariations'
 import CarouselNavigation from './carousel-navigation/CarouselNavigation'
 import { useCarousel } from './useCarousel'
-import { ICarouselItem } from '@/types/carousel-item.interface'
 import cn from 'clsx'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -12,6 +11,8 @@ import { FC, useState } from 'react'
 import { useActions } from '@/components/hooks/useActions'
 
 import { TypeSize } from '@/store/cart/cart.types'
+
+import { ICarouselItem } from '@/types/carousel-item.interface'
 
 const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 	const [selectedSize, setSelectedSize] = useState<TypeSize>('SHORT')
@@ -43,7 +44,7 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 				</button>
 				{isActive ? (
 					<>
-						<CarouselVariations
+						<SizeVariations
 							selectedSize={selectedSize}
 							setSelectedSize={setSelectedSize}
 						/>
