@@ -6,12 +6,12 @@ import { IProductDetails } from '@/types/product-details.interface'
 
 const ProductInfo: FC<IProductDetails> = ({ product }) => {
 	return (
-		<div className={styles.description}>
-			<h1>{product.name}</h1>
+		<div className={styles.information}>
+			<h2>{product.name}</h2>
 			<p>{product.description}</p>
 			{product.images.map(image => (
 				<button key={image}>
-					<Image src={image} alt='' width={100} height={100} />
+					<Image src={image} alt='' width={70} height={70} />
 				</button>
 			))}
 		</div>

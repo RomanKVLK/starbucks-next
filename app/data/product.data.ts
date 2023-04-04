@@ -1,3 +1,5 @@
+import { reviews } from './review.data'
+
 import { IProduct } from '@/types/product.interface'
 
 export const products: IProduct[] = [
@@ -9,7 +11,7 @@ export const products: IProduct[] = [
 		slug: 'pistachio-frappuccino-blended-beverage',
 		images: ['/images/products/Pistachio-Frappuccino.png'],
 		price: 9,
-		reviews: []
+		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	},
 	{
 		id: 2,

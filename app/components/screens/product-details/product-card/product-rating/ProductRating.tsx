@@ -1,24 +1,27 @@
 import { FC, useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
-const ProductRating: FC = () => {
-	const [rating, setRating] = useState(0)
+import { IProductDetails } from '@/types/product-details.interface'
 
-	const handleRating = (rate: number) => {
-		setRating(rate)
-	}
-	const onPointerEnter = () => console.log('Enter')
-	const onPointerLeave = () => console.log('Leave')
-	const onPointerMove = (value: number, index: number) =>
-		console.log(value, index)
+const ProductRating: FC<IProductDetails> = ({ product }) => {
+	const [rating, setRating] = useState(
+		Math.round(
+			product.reviews.reduce((acc, review) => acc + review.rating, 0) /
+				product.reviews.length
+		) || 0
+	)
 
 	return (
 		<div className='App'>
 			<Rating
-				onClick={handleRating}
-				onPointerEnter={onPointerEnter}
-				onPointerLeave={onPointerLeave}
-				onPointerMove={onPointerMove}
+				readonly
+				SVGstyle={{
+					display: 'inline-block'
+				}}
+				transition
+				allowFraction
+				size={32}
+				initialValue={rating}
 			/>
 		</div>
 	)

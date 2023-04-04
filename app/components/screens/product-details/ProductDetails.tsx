@@ -12,7 +12,7 @@ import { IProductDetails } from '@/types/product-details.interface'
 const ProductDetails: FC<IProductDetails> = ({ product }) => {
 	return (
 		<Layout title={product.name} description={product.description}>
-			<Heading>{product.name}</Heading>
+			<Heading>Product details</Heading>
 			<div>
 				<BreadCrumbs product={product} />
 				<ProductNavigation productId={product.id} />

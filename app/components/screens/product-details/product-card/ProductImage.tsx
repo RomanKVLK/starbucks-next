@@ -9,13 +9,15 @@ import { formatToCurrency } from '@/utils/format-to-currency'
 const ProductImage: FC<IProductDetails> = ({ product }) => {
 	return (
 		<div className={styles.image}>
-			<Image
-				src={product.images[0]}
-				alt={product.name}
-				width={300}
-				height={300}
-			/>
-			<div>{formatToCurrency(product.price)}</div>
+			<div className={styles.wrapper}>
+				<Image
+					src={product.images[0]}
+					alt={product.name}
+					width={260}
+					height={260}
+				/>
+			</div>
+			<div className={styles.price}>{formatToCurrency(product.price)}</div>
 		</div>
 	)
 }

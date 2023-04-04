@@ -14,7 +14,10 @@ const ProductVariations: FC<IProductDetails> = ({ product }) => {
 
 	return (
 		<div className={styles.variations}>
-			<ProductRating />
+			<div className={styles.rating}>
+				<span>Review:</span>
+				<ProductRating product={product} />
+			</div>
 			<SizeVariations
 				selectedSize={selectedSize}
 				setSelectedSize={setSelectedSize}

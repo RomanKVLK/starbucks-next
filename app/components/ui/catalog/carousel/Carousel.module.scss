@@ -22,17 +22,6 @@
 		@apply relative;
 	}
 
-	.variations {
-		@apply mt-6 grid grid-cols-4 gap-2;
-
-		> button {
-			@apply rounded border border-solid border-white bg-transparent px-0.5 py-1 text-[0.6rem] font-semibold uppercase text-white transition-colors;
-			&.active {
-				@apply bg-white text-dark-green;
-			}
-		}
-	}
-
 	&.active {
 		@apply bg-green p-7 pt-0 shadow-2xl shadow-green;
 		background-image: url('../../../../../public/images/bg-item.png');
@@ -61,4 +50,15 @@
 
 .button {
 	@apply flex justify-center;
+}
+
+.variations {
+	@apply mt-6 grid grid-cols-4 gap-2;
+
+	> button {
+		@apply rounded border border-solid border-white bg-transparent px-0.5 py-1 text-[0.6rem] font-semibold uppercase text-white transition-colors;
+		&.active {
+			@apply bg-white text-dark-green;
+		}
+	}
 }
