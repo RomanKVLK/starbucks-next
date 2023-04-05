@@ -14,10 +14,16 @@ const AddToCartButton: FC<IAddToCartButton> = ({ product, selectedSize }) => {
 		itemCart =>
 			itemCart.product.id === product.id && itemCart.size === selectedSize
 	)
+
+	const isSmall = variant === 'small'
 	return (
 		<div>
 			<Button
-				color={COLORS.black}
+				color={isSmall ? COLORS.green : COLORS.white}
+				backgroundColor={isSmall ? undefined : COLORS['dark-green']}
+				_hover={{
+					backgroundColor: isSmall ? undefined : COLORS['light-green']
+				}}
 				className='tracking-widest'
 				onClick={() =>
 					currentElement
@@ -28,7 +34,7 @@ const AddToCartButton: FC<IAddToCartButton> = ({ product, selectedSize }) => {
 				borderRadius={20}
 				fontWeight={500}
 				textTransform='uppercase'
-				fontSize={12}
+				fontSize={isSmall ? 12 : 16}
 			>
 				{currentElement ? 'Remove from basket' : 'Add to basket'}
 			</Button>

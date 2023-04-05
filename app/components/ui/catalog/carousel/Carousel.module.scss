@@ -55,6 +55,12 @@
 .variations {
 	@apply mt-6 grid grid-cols-4 gap-2;
 
+	&.medium {
+		> button {
+			@apply text-[0.8rem];
+		}
+	}
+
 	> button {
 		@apply rounded border border-solid border-white bg-transparent px-0.5 py-1 text-[0.6rem] font-semibold uppercase text-white transition-colors;
 		&.active {
