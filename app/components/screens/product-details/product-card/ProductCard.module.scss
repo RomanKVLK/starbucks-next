@@ -16,7 +16,11 @@
 		}
 
 		> button {
-			@apply mr-4 rounded-2xl bg-white last:mr-0;
+			@apply mr-4 rounded-2xl bg-white transition-colors duration-200 ease-in-out last:mr-0;
+
+			&.active {
+				@apply bg-green;
+			}
 		}
 	}
 
@@ -28,6 +32,10 @@
 			> span {
 				@apply mr-5 text-sm font-bold;
 			}
+		}
+
+		.buttonMedium {
+			@apply text-center;
 		}
 	}
 

@@ -22,7 +22,13 @@ const ProductVariations: FC<IProductDetails> = ({ product }) => {
 				selectedSize={selectedSize}
 				setSelectedSize={setSelectedSize}
 			/>
-			<AddToCartButton product={product} selectedSize={selectedSize} />
+			<div className={styles.buttonMedium}>
+				<AddToCartButton
+					product={product}
+					selectedSize={selectedSize}
+					variant='medium'
+				/>
+			</div>
 		</div>
 	)
 }

@@ -2,15 +2,21 @@ import styles from './ProductCard.module.scss'
 import ProductImage from './ProductImage'
 import ProductInfo from './ProductInfo'
 import ProductVariations from './ProductVariations'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
-import { IProductDetails } from '@/types/product-details.interface'
+import { IProductImage } from '@/types/product-details.interface'
 
-const ProductCard: FC<IProductDetails> = ({ product }) => {
+const ProductCard: FC<IProductImage> = ({ product }) => {
+	const [currentIndexImage, setCurrentIndexImage] = useState(0)
+
 	return (
 		<div className={styles.card}>
-			<ProductInfo product={product} />
-			<ProductImage product={product} />
+			<ProductInfo
+				product={product}
+				currentIndexImage={currentIndexImage}
+				setCurrentIndexImage={setCurrentIndexImage}
+			/>
+			<ProductImage product={product} currentIndexImage={currentIndexImage} />
 			<ProductVariations product={product} />
 		</div>
 	)

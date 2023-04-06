@@ -9,7 +9,10 @@ export const products: IProduct[] = [
 			'Sweet pistachio flavor blended with coffee, milk and ice, then finished with whipped cream and a salted brown-buttery topping—an icy-smooth, creamy delight to bring you into the new year.',
 		name: 'Pistachio Frappuccino® Blended Beverage',
 		slug: 'pistachio-frappuccino-blended-beverage',
-		images: ['/images/products/Pistachio-Frappuccino.png'],
+		images: [
+			'/images/products/Pistachio-Frappuccino.png',
+			'/images/products/Mocha-Cookie-Crumble-Frappuccino.png'
+		],
 		price: 9,
 		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	},
@@ -21,7 +24,7 @@ export const products: IProduct[] = [
 		slug: 'mocha-coffee-cookie-crumble-frappuccino',
 		images: ['/images/products/Mocha-Cookie-Crumble-Frappuccino.png'],
 		price: 8,
-		reviews: []
+		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	},
 	{
 		id: 3,
@@ -31,7 +34,7 @@ export const products: IProduct[] = [
 		slug: 'caramel-ribbon-crunch-frappuccino',
 		images: ['/images/products/Caramel-Ribbon-Crunch-Frappuccino.png'],
 		price: 9,
-		reviews: []
+		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	},
 	{
 		id: 4,
@@ -41,7 +44,7 @@ export const products: IProduct[] = [
 		slug: 'espresso-frappuccino-blended-beverage',
 		images: ['/images/products/Espresso-Frappuccino-Blended-Beverage.png'],
 		price: 11,
-		reviews: []
+		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	},
 	{
 		id: 5,
@@ -51,7 +54,7 @@ export const products: IProduct[] = [
 		slug: 'java-chip-frappuccino-blended-beverage',
 		images: ['/images/products/Java-Chip-Frappuccino-Blended-Beverage.png'],
 		price: 10,
-		reviews: []
+		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	},
 	{
 		id: 6,
@@ -61,7 +64,7 @@ export const products: IProduct[] = [
 		slug: 'mocha-frappuccino-blended-beverage',
 		images: ['/images/products/Mocha-Frappuccino-Blended-Beverage.png'],
 		price: 9,
-		reviews: []
+		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	},
 	{
 		id: 7,
@@ -71,6 +74,6 @@ export const products: IProduct[] = [
 		slug: 'caffe-vanilla-frappuccino-blended-beverage',
 		images: ['/images/products/Mocha-Frappuccino-Blended-Beverage.png'],
 		price: 11,
-		reviews: []
+		reviews: [reviews[0], reviews[1], reviews[2], reviews[3]]
 	}
 ]

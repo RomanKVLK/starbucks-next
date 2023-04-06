@@ -7,7 +7,11 @@ import { useCart } from '@/components/hooks/useCart'
 
 import { IAddToCartButton } from '@/types/carousel-variations.interface'
 
-const AddToCartButton: FC<IAddToCartButton> = ({ product, selectedSize }) => {
+const AddToCartButton: FC<IAddToCartButton> = ({
+	product,
+	selectedSize,
+	variant = 'small'
+}) => {
 	const { addToCart, removeFromCart } = useActions()
 	const { cart } = useCart()
 	const currentElement = cart.find(
@@ -22,7 +26,7 @@ const AddToCartButton: FC<IAddToCartButton> = ({ product, selectedSize }) => {
 				color={isSmall ? COLORS.green : COLORS.white}
 				backgroundColor={isSmall ? undefined : COLORS['dark-green']}
 				_hover={{
-					backgroundColor: isSmall ? undefined : COLORS['light-green']
+					backgroundColor: isSmall ? undefined : COLORS['dark-green']
 				}}
 				className='tracking-widest'
 				onClick={() =>

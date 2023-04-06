@@ -10,7 +10,8 @@ const SIZES: TypeSize[] = ['SHORT', 'TALL', 'GRANDE', 'VENTI']
 
 const SizeVariations: FC<ISizeVariations> = ({
 	selectedSize,
-	setSelectedSize
+	setSelectedSize,
+	variant = 'small'
 }) => {
 	return (
 		<div className={styles.variations}>
